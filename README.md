@@ -3,12 +3,12 @@ UON.BashComplete
 
 Bash compeletion for TYPO3 FLOW3
 
-dd this to your .bashrc
+add this to your .bashrc
 <----copy start---->
-export FLOW3_ROOTPATH=<Path/To/Your/FLOW3/>
-
-source $FLOW3_ROOTPATH/Packages/Application/UON.BashComplete/Scripts/flow3.add.ons.sh
-source $FLOW3_ROOTPATH/Packages/Application/UON.BashComplete/Scripts/flow3.bash.complete.sh
+>export FLOW3_ROOTPATH=<Path/To/Your/FLOW3/>
+>
+>source $FLOW3_ROOTPATH/Packages/Application/UON.BashComplete/Scripts/flow3.add.ons.sh
+>source $FLOW3_ROOTPATH/Packages/Application/UON.BashComplete/Scripts/flow3.bash.complete.sh
 <----copy end  ---->
 
 To activate you new bash settings run
