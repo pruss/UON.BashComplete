@@ -5,7 +5,7 @@ Bash compeletion for TYPO3 FLOW3
 
 add this to your .bashrc
 
->export FLOW3_ROOTPATH=<Path/To/Your/FLOW3/>
+>export FLOW3_ROOTPATH=#<Path/To/Your/FLOW3/>
 >
 >source $FLOW3_ROOTPATH/Packages/Application/UON.BashComplete/Scripts/flow3.add.ons.sh
 >source $FLOW3_ROOTPATH/Packages/Application/UON.BashComplete/Scripts/flow3.bash.complete.sh
