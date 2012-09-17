@@ -1,0 +1,43 @@
+# UON.BashComplete
+# ================
+#
+# Bash compeletion for TYPO3 FLOW3
+#
+# (c) Copyright by Peter Russ <peter@uon.li> 2012
+#
+# Free for non-commercial use
+# comes without any warrenty
+
+# Open your .bashrc in your favorite editor
+$nano ~/.bashrc
+
+# add the rootpath to your FLOW3 instance to the environment permanently 
+export FLOW3_ROOTPATH=<path/to/your/flow3/instance>
+
+# to active bash autocompletion add this 2 lines
+source $FLOW3_ROOTPATH/Packages/Application/UON.BashComplete/Scripts/flow3.add.ons.sh
+source $FLOW3_ROOTPATH/Packages/Application/UON.BashComplete/Scripts/flow3.bash.complete.sh
+
+#After saving the changes, activate the bash changes
+$source ~/.bashrc
+
+
+# WHAT it does:
+###############
+
+#flow3.add.ons.sh
+# With this you can use
+$flow3
+# instead of
+$./flow3
+# anywhere ;-)
+
+
+# flow3.bash.complete.sh
+# Provides bash code completion.
+
+# Before using the first time or after adding new cli commands or changing attribute run
+$flow3compile
+
+#Have fun. Comments welcome. Peter.
+
