@@ -1,14 +1,14 @@
 export COMP_WORDBREAKS="${COMP_WORDBREAKS//:/}"
 
-flow3compile()
+flowcompile()
 {
 	local startDirectory=`pwd`
-	cd "$FLOW3_ROOTPATH"
-	./flow3 bash:compile
+	cd "$FLOW_ROOTPATH"
+	./flow bash:compile
 	cd "$startDirectory"
 }
 
-_flow3()
+_flow()
 {
 	local first cur opts
 
@@ -17,14 +17,14 @@ _flow3()
 	cur="${COMP_WORDS[COMP_CWORD]}"
 
 	if [ ${COMP_CWORD} -eq 1 ]; then
-		opts=`grep -- "^COMMANDS"  ~/.flow3_complete|cut -f2`
+		opts=`grep -- "^COMMANDS"  ~/.flow_complete|cut -f2`
 	else
 		first="${COMP_WORDS[1]}"
 
 		if [ $first = "help" ]; then
-			opts=`grep -- "^COMMANDS"  ~/.flow3_complete|cut -f2`
+			opts=`grep -- "^COMMANDS"  ~/.flow_complete|cut -f2`
 		else
-			opts=`grep -- "^${first};"  ~/.flow3_complete|cut -f2`
+			opts=`grep -- "^${first};"  ~/.flow_complete|cut -f2`
 		fi
 	fi
 
@@ -32,4 +32,4 @@ _flow3()
     return 0
 
 }
-complete -o default -F _flow3 flow3
+complete -o default -F _flow flow

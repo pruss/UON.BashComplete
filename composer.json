@@ -1,0 +1,14 @@
+{
+    "name":"uon\/bashcomplete",
+    "type":"typo3-flow-package",
+    "description":"Bash completion for TYPO3 Flow 2.x",
+    "version":2.0,
+    "require":{
+        "typo3\/flow":"2.*"
+    },
+    "autoload":{
+        "psr-0":{
+            "UON\\BashComplete":"Classes"
+        }
+    }
+}

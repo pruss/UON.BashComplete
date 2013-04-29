@@ -6,35 +6,35 @@ namespace UON\BashComplete\Command;
  *                                                                        *
  *                                                                        */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * Bash command controller for the UON.BashComplete package
  *
- * @FLOW3\Scope("singleton")
+ * @Flow\Scope("singleton")
  */
-class BashCommandController extends \TYPO3\FLOW3\Cli\CommandController {
+class BashCommandController extends \TYPO3\Flow\Cli\CommandController {
 
 	/**
-	 * @var \TYPO3\FLOW3\Package\PackageManagerInterface
-	 * @FLOW3\Inject
+	 * @var \TYPO3\Flow\Package\PackageManagerInterface
+	 * @Flow\Inject
 	 */
 	protected $packageManager;
 
 	/**
-	 * @var \TYPO3\FLOW3\Core\Bootstrap
-	 * @FLOW3\Inject
+	 * @var \TYPO3\Flow\Core\Bootstrap
+	 * @Flow\Inject
 	 */
 	protected $bootstrap;
 
 	/**
-	 * @var \TYPO3\FLOW3\Cli\CommandManager
-	 * @FLOW3\Inject
+	 * @var \TYPO3\Flow\Cli\CommandManager
+	 * @Flow\Inject
 	 */
 	protected $commandManager;
 
 	/**
-	 * Compiles flow3 cli to enable command completion
+	 * Compiles flow cli to enable command completion
 	 *
 	 * @param bool $verbose
 	 * @return void
@@ -58,7 +58,7 @@ class BashCommandController extends \TYPO3\FLOW3\Cli\CommandController {
 
 					$matchingCommands = $this->commandManager->getCommandsByIdentifier($commandIdentifier);
 					$matchingCommand = array_shift($matchingCommands);
-					if ($matchingCommand instanceof \TYPO3\FLOW3\Cli\Command) {
+					if ($matchingCommand instanceof \TYPO3\Flow\Cli\Command) {
 						$commandArgumentDefinitions = $matchingCommand->getArgumentDefinitions();
 
 						if ($command->hasArguments()) {
@@ -79,8 +79,8 @@ class BashCommandController extends \TYPO3\FLOW3\Cli\CommandController {
 			$this->outputLine($output);
 		}
 
-		file_put_contents(getenv('HOME') . '/.flow3_complete', $output);
-		$this->outputLine('Wrote ~/.flow3_complete');
+		file_put_contents(getenv('HOME') . '/.flow_complete', $output);
+		$this->outputLine('Wrote ~/.flow_complete');
 
 	}
 
@@ -88,7 +88,7 @@ class BashCommandController extends \TYPO3\FLOW3\Cli\CommandController {
 	 * Builds an index of available commands. For each of them a Command object is
 	 * added to the commands array of this class.
 	 *
-	 * @param array<\TYPO3\FLOW3\Cli\Command> $commands
+	 * @param array<\TYPO3\Flow\Cli\Command> $commands
 	 * @return array in the format array('<packageKey>' => array('<CommandControllerClassName>', array('<command1>' => $command1, '<command2>' => $command2)))
 	 */
 	protected function buildCommandsIndex(array $commands) {
