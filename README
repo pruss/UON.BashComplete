@@ -1,17 +1,16 @@
 # UON.BashComplete
 # ================
 #
-# Bash compeletion for TYPO3 FLow 2.x
+# Bash completion for TYPO3 FLow 2.x
 #
 # (c) Copyright by Peter Russ <peter@uon.li> 2013
 #
-# Free for non-commercial use
-# comes without any warrenty
+# Free for any use but without any warrenty
 
 # Open your .bashrc in your favorite editor
 $nano ~/.bashrc
 
-# add the rootpath to your FLOW3 instance to the environment permanently 
+# add the rootpath to your FLOW instance to the environment permanently
 export FLOW_ROOTPATH=<path/to/your/flow/instance>
 
 # to active bash autocompletion add this 2 lines
